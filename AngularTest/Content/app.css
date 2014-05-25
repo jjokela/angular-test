@@ -98,3 +98,7 @@ input.ng-invalid.ng-dirty {
 .course-description {
     height: 80px;
 }
+
+.course-header {
+    height: 66px;
+}

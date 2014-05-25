@@ -2,7 +2,7 @@
     div.well.hoverWell.hidden-xs
         div.row
             img.col-lg-2(data-ng-src="{{course.imageLink}}")
-            h2.col-lg-10 {{course.name}}
+            h2.col-lg-10.course-header {{course.name}}
         div.row.padding-top
             span.col-lg-2 Description:
             span.col-lg-10.course-description {{course.description}}
@@ -21,7 +21,6 @@
                 .col-sm-10
                     p.form-control-static {{course.description}}     
             .form-group
-                label.col-sm-2.control-label Course Image
                 .col-sm-10
                     img#courseImage(data-ng-src="{{course.imageLink}}")   
             .form-group
