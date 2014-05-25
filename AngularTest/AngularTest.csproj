@@ -590,8 +590,6 @@
     <Content Include="Tests\lib\angular\version.txt" />
     <Content Include="Tests\lib\jquery.min.js" />
     <Content Include="Tests\lib\sinon-1.7.3.js" />
-    <Content Include="Tests\unit\fubu.js" />
-    <Content Include="Tests\unit\testi.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -620,6 +618,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\app\" />
+    <Folder Include="Tests\unit\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
