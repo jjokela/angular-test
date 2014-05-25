@@ -2,10 +2,6 @@
 
 var angularTest = angular.module('angularTest', ['ngSanitize', 'ngRoute'])
     .config(function ($routeProvider, $locationProvider) {
-        $routeProvider.when('/test', {
-            templateUrl: 'templates/Test.html',
-            controller: 'TestController'
-        });
         $routeProvider.when('/courses', {
             templateUrl: 'templates/CourseList.html',
             controller: 'CourseListController'

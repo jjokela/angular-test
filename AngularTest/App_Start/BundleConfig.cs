@@ -18,15 +18,7 @@ namespace SpaTest
 
             // JS
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
-                "~/js/app.js",
-                "~/js/directives/courseThumbnail.js",
-                "~/js/directives/myModal.js",
-                "~/js/services/dataService.js",
-                "~/js/services/notificationFactory.js",
-                "~/js/controllers/courseListController.js",
-                "~/js/controllers/courseDetailsController.js",
-                "~/js/controllers/newCourseController.js",
-                "~/js/controllers/editCourseController.js"
+
             ));
         }
     }
