@@ -23,7 +23,7 @@ form.form-horizontal(role="form", name="newCourseForm")
             img#courseImage(data-ng-src="{{course.imageLink}}")
     .form-group
         label.col-sm-2.control-label(for="courseStatus") Status
-        .col-sm-2
+        .col-sm-3
             select#courseStatus.form-control(ng-model="course.status", required="")
                 option(value="") Choose Status
                 option(value="Not Started") Not Started
