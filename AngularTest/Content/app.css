@@ -94,3 +94,7 @@ input.ng-invalid.ng-dirty {
 .padding-left {
     padding-left: 10px;
 }
+
+.course-description {
+    height: 80px;
+}
