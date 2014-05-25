@@ -1,0 +1,52 @@
+﻿h1 Course Details
+hr
+.col-lg-12(ng-show="course")
+    form.form-horizontal(role="form", name="courseForm")
+        .form-group
+            label.col-sm-2.control-label Course Name
+            .col-sm-10
+                p.form-control-static {{course.name}}
+        .form-group
+            label.col-sm-2.control-label Description
+            .col-sm-10
+                p.form-control-static {{course.description}}
+        .form-group
+            label.col-sm-2.control-label Course Link
+            .col-sm-10
+                p.form-control-static 
+                    a(href="{{course.link}}") {{course.link}}
+        .form-group
+            label.col-sm-2.control-label Course Image Link
+            .col-sm-10
+                p.form-control-static {{course.imageLink}}       
+        .form-group
+            label.col-sm-2.control-label Course Image
+            .col-sm-10
+                img#courseImage(data-ng-src="{{course.imageLink}}")   
+        .form-group
+            label.col-sm-2.control-label Status
+            .col-sm-10
+                p.form-control-static {{course.status}}
+        br
+        .form-group
+            .col-sm-offset-2.col-sm-10
+                button.btn.btn-info(type="submit", ng-click="back()") Back to Course List
+                button.btn.btn-primary.margin-left(type="submit", ng-disabled="newEventForm.$invalid", ng-click="edit()") Edit
+                button.btn.btn-danger.margin-left(data-toggle='modal', data-target='.bs-example-modal-sm') Delete
+
+div(ng-show="!course && loaded")
+    | No course found.
+div(ng-show="!loaded")
+    | Loading course data...
+
+.modal.fade.bs-example-modal-sm(my-modal="", tabindex='-1', role='dialog', aria-labelledby='mySmallModalLabel', aria-hidden='true')
+    .modal-dialog.modal-sm
+        .modal-content
+            .modal-header
+                button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                h4.modal-title Delete?
+            .modal-body
+                p Do you really want to delete course?
+            .modal-footer
+                button.btn.btn-default(type='button', data-dismiss='modal') Cancel
+                button.btn.btn-danger(type='button', data-dismiss="modal", ng-click="delete()") Delete

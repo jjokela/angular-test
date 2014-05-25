@@ -1,0 +1,36 @@
+﻿h1 New Event
+hr
+form.form-horizontal(role="form", name="newCourseForm")
+    .form-group
+        label.col-sm-2.control-label(for="courseName") Course Name
+        .col-sm-5
+            input#courseName.form-control(type="text", ng-model="course.name", required="", placeholder="Course Name")
+    .form-group
+        label.col-sm-2.control-label(for="courseDescription") Description
+        .col-sm-10
+            textarea#courseDescription.form-control(ng-model="course.description", required="", rows="6", placeholder="Course Description")
+    .form-group
+        label.col-sm-2.control-label(for="courseLink") Course Link
+        .col-sm-8
+            input#courseLink.form-control(type="url", ng-model="course.link", required="", placeholder="http://test.com")
+    .form-group
+        label.col-sm-2.control-label(for="coursePictureLink") Course Image Link
+        .col-sm-8
+            input#courseImageLink.form-control(type="url", ng-model="course.imageLink", required="", placeholder="http://test.com")    
+    .form-group(ng-show="course.imageLink")
+        label.col-sm-2.control-label(for="courseImage")
+        .col-sm-8
+            img#courseImage(data-ng-src="{{course.imageLink}}")
+    .form-group
+        label.col-sm-2.control-label(for="courseStatus") Status
+        .col-sm-2
+            select#courseStatus.form-control(ng-model="course.status", required="")
+                option(value="") Choose Status
+                option(value="Not Started") Not Started
+                option(value="In Progress") In Progress
+                option(value="Done") Done            
+    .form-group
+        .col-sm-offset-2.col-sm-10
+            button.btn.btn-primary(type="submit", ng-disabled="newEventForm.$invalid", ng-click="save(course, newCourseForm)")
+                | Save
+            button.btn.btn-default.margin-left(type="submit", ng-click="cancel()") Cancel

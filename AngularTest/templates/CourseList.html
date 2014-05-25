@@ -1,0 +1,23 @@
+
+<div>
+  <h1>Courses</h1>
+  <hr/>
+  <form role="form" class="form-inline courseFilter">
+    <div class="form-group">
+      <label for="difficulty">Show:</label>
+      <select id="difficulty" ng-model="query.status" class="form-control input-medium">
+        <option selected="" value="">All</option>
+        <option value="done">Done</option>
+        <option value="in progress">In Progress</option>
+        <option value="not started">Not Started</option>
+      </select>
+    </div>
+  </form>
+  <ul class="thumbnails">
+    <li ng-repeat="course in filtered = (courses | filter: query) | orderBy: name" class="col-sm-6">
+      <course-thumbnail course="course"></course-thumbnail>
+    </li>
+  </ul>
+  <div ng-show="filtered.length == 0 &amp;&amp; loaded">No courses found</div>
+  <div ng-show="!loaded">Loading courses...</div>
+</div>

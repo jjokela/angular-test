@@ -1,0 +1,18 @@
+﻿div
+    h1 Courses
+    hr
+    form.form-inline.courseFilter(role="form")
+        .form-group
+            label(for="difficulty") Show:
+            select#difficulty.form-control.input-medium(ng-model="query.status")
+                option(selected="", value="") All
+                option(value="done") Done
+                option(value="in progress") In Progress
+                option(value="not started") Not Started
+    ul.thumbnails
+        li(ng-repeat="course in filtered = (courses | filter: query) | orderBy: name").col-sm-6
+            course-thumbnail(course="course")
+    div(ng-show="filtered.length == 0 && loaded")
+        | No courses found
+    div(ng-show="!loaded")
+        | Loading courses...
