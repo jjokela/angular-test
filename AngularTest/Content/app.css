@@ -1,4 +1,11 @@
 ﻿/* app css stylesheet */
+
+/* Windows Mobile 300ms wait disable */
+html {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
