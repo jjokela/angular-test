@@ -109,3 +109,9 @@ input.ng-invalid.ng-dirty {
 .course-header {
     height: 66px;
 }
+
+@media (max-width: 767px) {
+    ul.thumbnails li {
+        padding-right: 0;
+    }
+}
