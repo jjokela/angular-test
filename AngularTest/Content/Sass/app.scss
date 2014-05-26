@@ -1,0 +1,128 @@
+﻿$invalidColor: pink;
+
+$marginLeft: 5px;
+$marginRight: 10px;
+$paddingTop: 10px;
+$paddingLeft: 10px;
+
+$courseDescription: 80px;
+$courseHeader: 66px;
+
+body {
+}
+
+/* Windows Mobile 300ms wait disable */
+html {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+.menu {
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+
+    &:before {
+        content: "[";
+    }
+
+    &:after {
+        content: "]";
+    }
+
+    > li {
+        display: inline;
+    }
+
+    > li:before {
+        content: "|";
+        padding-right: 0.3em;
+    }
+
+    > li:nth-child(1):before {
+        content: "";
+        padding: 0;
+    }
+}
+
+.session-creator {
+    margin-top: -10px;
+}
+
+.votingWidget {
+    text-align: center;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, x-ng-cloak {
+    display: none;
+}
+
+ul.thumbnails {
+    list-style: none;
+    padding: 0;
+}
+
+.courseFilter {
+    margin-bottom: 20px;
+
+    label, select {
+        margin-right: 10px;
+    }
+}
+
+input.ng-invalid.ng-dirty {
+    background-color: $invalidColor;
+}
+
+.newEventImage {
+    margin-bottom: 20px;
+}
+
+.hoverWell:hover {
+    background-color: #52575c;
+    cursor: pointer;
+}
+
+.thumbnails {
+    a {
+        text-decoration: none;
+    }
+    h2 {
+        padding-left: 15px;
+        margin-top: 5px;
+    }
+    .thumbnails li {
+        padding-left: 0;
+    }
+}
+
+.margin-left {
+    margin-left: $marginLeft;
+}
+
+.margin-right {
+    margin-right: $marginRight;
+}
+
+.padding-top {
+    padding-top: $paddingTop;
+}
+
+.padding-left {
+    padding-left: $paddingLeft;
+}
+
+.course-description {
+    height: $courseDescription;
+}
+
+.course-header {
+    height: $courseHeader;
+}
+
+@media (max-width: 767px) {
+    ul.thumbnails li {
+        padding-right: 0;
+    }
+}

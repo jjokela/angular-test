@@ -1,117 +1,83 @@
-﻿/* app css stylesheet */
-
+﻿
 /* Windows Mobile 300ms wait disable */
 html {
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-}
+  -ms-touch-action: manipulation;
+  touch-action: manipulation; }
 
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
+  padding: 0 0 0.5em; }
+  .menu:before {
+    content: "["; }
+  .menu:after {
+    content: "]"; }
+  .menu > li {
+    display: inline; }
+  .menu > li:before {
+    content: "|";
+    padding-right: 0.3em; }
+  .menu > li:nth-child(1):before {
+    content: "";
+    padding: 0; }
 
 .session-creator {
-    margin-top: -10px;
-}
+  margin-top: -10px; }
 
 .votingWidget {
-    text-align: center;
-}
+  text-align: center; }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, x-ng-cloak {
-    display: none;
-}
+  display: none; }
 
 ul.thumbnails {
-    list-style: none;
-    padding: 0;
-}
+  list-style: none;
+  padding: 0; }
 
 .courseFilter {
-    margin-bottom: 20px;
-}
-
-.courseFilter label, .courseFilter select {
-    margin-right: 10px;
-}
+  margin-bottom: 20px; }
+  .courseFilter label, .courseFilter select {
+    margin-right: 10px; }
 
 input.ng-invalid.ng-dirty {
-    background-color: pink;
-}
-
-.margin-left {
-    margin-left: 5px;
-}
+  background-color: pink; }
 
 .newEventImage {
-    margin-bottom: 20px;
-}
+  margin-bottom: 20px; }
 
 .hoverWell:hover {
-    background-color: #52575c;
-    cursor: pointer;
-}
+  background-color: #52575c;
+  cursor: pointer; }
 
-.thumbnails a{
-    text-decoration: none;
-}
-
+.thumbnails a {
+  text-decoration: none; }
 .thumbnails h2 {
-    padding-left: 15px;
-    margin-top: 5px;
-}
+  padding-left: 15px;
+  margin-top: 5px; }
+.thumbnails .thumbnails li {
+  padding-left: 0; }
 
-.thumbnails li {
-    padding-left: 0;
-}
+.margin-left {
+  margin-left: 5px; }
 
 .margin-right {
-    margin-right: 10px;
-}
+  margin-right: 10px; }
 
 .padding-top {
-    padding-top: 10px;
-}
+  padding-top: 10px; }
 
 .padding-left {
-    padding-left: 10px;
-}
+  padding-left: 10px; }
 
 .course-description {
-    height: 80px;
-}
+  height: 80px; }
 
 .course-header {
-    height: 66px;
-}
+  height: 66px; }
 
 @media (max-width: 767px) {
-    ul.thumbnails li {
-        padding-right: 0;
-    }
-}
+  ul.thumbnails li {
+    padding-right: 0; } }
+
+/*# sourceMappingURL=app.css.map */

@@ -322,6 +322,10 @@
     <Content Include="Content\toastr.css.map">
       <DependentUpon>toastr.css</DependentUpon>
     </Content>
+    <Content Include="Content\Sass\app.scss" />
+    <Content Include="Content\app.css.map">
+      <DependentUpon>app.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\coursedemo.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
