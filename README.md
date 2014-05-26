@@ -16,7 +16,7 @@ Its purpose is to demonstrate a full-stack, mixed technology web app, which can 
 
 ##Client
 
-This is a project done mostly in Visual Studio. Client-side is done using almost completelly with Angular. Only index page uses Asp.Net MVC. Html files are generated using Jade preprocessor. Client uses Bootstrap 3 and a custom theme. 
+This is a project done mostly in Visual Studio. Client-side is done using almost completelly with Angular. Only index page uses Asp.Net MVC. Html files are generated using Jade preprocessor, and application's css is done with Sass. Client uses Bootstrap 3 and a custom theme. 
 
 ##Server
 
