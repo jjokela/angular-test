@@ -54,7 +54,12 @@ input.ng-invalid.ng-dirty {
   text-decoration: none; }
 .thumbnails h2 {
   padding-left: 15px;
-  margin-top: 5px; }
+  margin-top: 5px;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
 .thumbnails .thumbnails li {
   padding-left: 0; }
 
