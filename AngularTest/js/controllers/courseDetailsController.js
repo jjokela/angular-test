@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angularTest.controller('CourseDetailsController', 
-    function CourseDetailsController($scope, $timeout, $routeParams, $location, dataService, notificationFactory) {
+    function CourseDetailsController($scope, $routeParams, $location, dataService, notificationFactory) {
         $scope.course = "";
         $scope.loaded = false;
 
@@ -24,8 +24,10 @@ angularTest.controller('CourseDetailsController',
             dataService.deleteCourse($routeParams.courseId).then(function (data) {
                 console.log("Delete succesfull");
                 notificationFactory.success('Course deleted');
-                $scope.dismiss(); // myModal directive
-                $timeout(function () { $location.url('/courses'); }, 300)
+                // wrap redirect inside scope.apply
+                $scope.dismiss().then(function () {
+                    $scope.$apply(function () { $location.path('/courses'); });
+                }); // myModal directive
             }, function (xhr) {
                 console.log("Error: " + xhr);
             });
