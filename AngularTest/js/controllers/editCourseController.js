@@ -5,11 +5,11 @@ angularTest.controller('EditCourseController',
         $scope.course = "";
         $scope.loaded = false;
 
-        dataService.courseDetails($routeParams.courseId).then(function (data, textStatus, jqXHR) {
+        dataService.courseDetails($routeParams.courseId).then(function (data) {
             $scope.course = data.data;
             $scope.loaded = true;
-        }, function (jqXHR, textStatus, errorThrown) {
-            console.log("Error: " + jqXHR);
+        }, function (xhr) {
+            console.log("Error: " + xhr);
         });
 
         $scope.cancel = function () {
@@ -18,12 +18,12 @@ angularTest.controller('EditCourseController',
 
         $scope.save = function (course, courseForm) {
             if (courseForm.$valid) {
-                dataService.editCourse($routeParams.courseId, course).then(function (data, textStatus, jqXHR) {
+                dataService.editCourse($routeParams.courseId, course).then(function (data) {
                     console.log('ny meni editti hyvin: ' + data);
                     notificationFactory.success('Changes saved succesfully!');
                     $location.url('/courses');
-                }, function (jqXHR, textStatus, errorThrown) {
-                    console.log('fail: ' + jqXHR.data.message);
+                }, function (xhr) {
+                    console.log('fail: ' + xhr.data.message);
                 });
             }
         };

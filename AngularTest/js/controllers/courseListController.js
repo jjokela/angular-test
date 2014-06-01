@@ -5,11 +5,11 @@ angularTest.controller('CourseListController',
 	    $scope.loaded = false;
 	    $scope.courses = {};
 
-	    dataService.courses().then(function (data, textStatus, jqXHR) {
+	    dataService.courses().then(function (data) {
 	        $scope.courses = data.data;
 	        $scope.loaded = true;
-	    }, function (jqXHR, textStatus, errorThrown) {
-	        console.log("Error: " + jqXHR);
+	    }, function (xhr) {
+	        console.log("Error: " + xhr);
 	        notificationFactory.error('Error when loading courses');
 	    });
 	}

@@ -10,12 +10,12 @@ angularTest.controller('NewCourseController',
 
         $scope.save = function (course, newCourseForm) {
             if (newCourseForm.$valid) {
-                dataService.newCourse(course).then(function (data, textStatus, jqXHR) {
+                dataService.newCourse(course).then(function (data) {
                     console.log('ny meni save hyvin: ' + data);
                     notificationFactory.success('New course created succesfully!');
                     $location.url('/courses');
-                }, function (jqXHR, textStatus, errorThrown) {
-                    console.log('fail: ' + jqXHR.data.message);
+                }, function (xhr) {
+                    console.log('fail: ' + xhr.data.message);
                 });
             }
         };
