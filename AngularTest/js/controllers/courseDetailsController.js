@@ -5,11 +5,11 @@ angularTest.controller('CourseDetailsController',
         $scope.course = "";
         $scope.loaded = false;
 
-        dataService.courseDetails($routeParams.courseId).then(function (data) {
+        dataService.courseDetails($routeParams.courseId).then(function (data, textStatus, jqXHR) {
             $scope.course = data.data;
             $scope.loaded = true;
-        }, function (xhr) {
-            console.log("Error: " + xhr);
+        }, function (jqXHR, textStatus, errorThrown) {
+            console.log("Error: " + jqXHR);
         });
 
         $scope.back = function () {
@@ -21,15 +21,15 @@ angularTest.controller('CourseDetailsController',
         };
 
         $scope.delete = function (course) {
-            dataService.deleteCourse($routeParams.courseId).then(function (data) {
+            dataService.deleteCourse($routeParams.courseId).then(function (data, textStatus, jqXHR) {
                 console.log("Delete succesfull");
                 notificationFactory.success('Course deleted');
                 // wrap redirect inside scope.apply
                 $scope.dismiss().then(function () {
                     $scope.$apply(function () { $location.path('/courses'); });
                 }); // myModal directive
-            }, function (xhr) {
-                console.log("Error: " + xhr);
+            }, function (jqXHR, textStatus, errorThrown) {
+                console.log("Error: " + jqXHR);
             });
         };
     }

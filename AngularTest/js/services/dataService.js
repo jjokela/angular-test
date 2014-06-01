@@ -6,10 +6,10 @@ angularTest.factory('dataService', ["$http", function ($http) {
         var promise = $http({
             url: '/api/courses',
             method: 'GET'
-        }).success(function (data, status, headers, config) {
+        }).done(function (data, status, jqXHR) {
             console.log(data);
-        }).error(function (err, status) {
-            console.log('failed: ' + err);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            console.log('failed: ' + errorThrown);
         });
 
         return promise;
@@ -19,10 +19,10 @@ angularTest.factory('dataService', ["$http", function ($http) {
         var promise = $http({
             url: '/api/courses/' + courseId,
             method: 'GET'
-        }).success(function (data, status, headers, config) {
+        }).done(function (data, status, jqXHR) {
             console.log(data);
-        }).error(function (err, status) {
-            console.log('failed: ' + err);
+        }).fail(function (qXHR, textStatus, errorThrown) {
+            console.log('failed: ' + errorThrown);
         });
 
         return promise;
@@ -33,10 +33,10 @@ angularTest.factory('dataService', ["$http", function ($http) {
             url: 'api/Courses',
             method: 'POST',
             data: course
-        }).success(function (data, status, headers, config) {
+        }).done(function (data, status, jqXHR) {
             console.log(data);
-        }).error(function (err, status) {
-            console.log('failed: ' + err);
+        }).fail(function (qXHR, textStatus, errorThrown) {
+            console.log('failed: ' + errorThrown);
         });
 
         return promise;
@@ -47,10 +47,10 @@ angularTest.factory('dataService', ["$http", function ($http) {
             url: 'api/Courses/' + courseId,
             method: 'PUT',
             data: course
-        }).success(function (data, status, headers, config) {
+        }).done(function (data, status, jqXHR) {
             console.log(data);
-        }).error(function (err, status) {
-            console.log('failed: ' + err);
+        }).fail(function (qXHR, textStatus, errorThrown) {
+            console.log('failed: ' + errorThrown);
         });
 
         return promise;
@@ -60,10 +60,10 @@ angularTest.factory('dataService', ["$http", function ($http) {
         var promise = $http({
             url: 'api/Courses/' + courseId,
             method: 'DELETE'
-        }).success(function (data, status, headers, config) {
+        }).done(function (data, status, jqXHR) {
             console.log(data);
-        }).error(function (err, status) {
-            console.log('failed: ' + err);
+        }).fail(function (qXHR, textStatus, errorThrown) {
+            console.log('failed: ' + errorThrown);
         });
 
         return promise;
