@@ -30,7 +30,7 @@ angularTest.factory('dataService', ["$http", function ($http) {
 
     var newCourse = function (course) {
         var promise = $http({
-            url: 'api/Courses',
+            url: '/api/Courses',
             method: 'POST',
             data: course
         }).success(function (data, status, headers, config) {
@@ -44,7 +44,7 @@ angularTest.factory('dataService', ["$http", function ($http) {
 
     var editCourse = function (courseId, course) {
         var promise = $http({
-            url: 'api/Courses/' + courseId,
+            url: '/api/Courses/' + courseId,
             method: 'PUT',
             data: course
         }).success(function (data, status, headers, config) {
@@ -58,7 +58,7 @@ angularTest.factory('dataService', ["$http", function ($http) {
 
     var deleteCourse = function (courseId) {
         var promise = $http({
-            url: 'api/Courses/' + courseId,
+            url: '/api/Courses/' + courseId,
             method: 'DELETE'
         }).success(function (data, status, headers, config) {
             console.log(data);

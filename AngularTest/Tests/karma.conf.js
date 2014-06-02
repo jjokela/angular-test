@@ -18,9 +18,11 @@
             '../Tests/lib/sinon-1.7.3.js',
             '../Scripts/angular-*.js',
             '../Tests/lib/angular/angular-mocks.js',
-            
             '../js/**/*.js',
-            '../Tests/unit/**/*.js'
+            '../Tests/unit/**/*.js',
+            '../Tests/js/controllers/**/*.js',
+            '../Tests/js/directives/**/*.js',
+            '../Tests/js/services/**/*.js'
             //'partials/**/*.html'
         ],
 

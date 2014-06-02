@@ -29,7 +29,8 @@ describe('CourseListController', function() {
         var ctrl = $controllerConstructor("CourseListController",
             {$scope: scope, $location: {}, dataService: mockCourseData, notificationFactory: mockNotificationFactory});
 
-        scope.GetCourses(promise);
+        // not needed, since GetCourses gets automatically called
+        //scope.GetCourses(promise);
 
         // Propagate promise resolution to 'then' functions using $apply().
         scope.$apply();
@@ -52,7 +53,8 @@ describe('CourseListController', function() {
         var ctrl = $controllerConstructor("CourseListController",
             {$scope: scope, $location: {}, dataService: mockCourseData, notificationFactory: mockNotificationFactory});
 
-        scope.GetCourses(promise);
+        // not needed, since GetCourses gets automatically called
+        //scope.GetCourses(promise);
 
         // Propagate promise resolution to 'then' functions using $apply().
         scope.$apply();
@@ -60,5 +62,7 @@ describe('CourseListController', function() {
         expect(scope.GetCourses).toThrow();
         expect(scope.loaded).toBe(false);
         expect(scope.courses).toEqual({});
+        expect(mockNotificationFactory.error.called).toBe(true);
+
     })
 });
