@@ -16,6 +16,7 @@
             '../Tests/lib/jquery.min.js', 
             '../Scripts/angular.js',
             '../Tests/lib/sinon-1.7.3.js',
+            '../Tests/lib/toastr.js',
             '../Scripts/angular-*.js',
             '../Tests/lib/angular/angular-mocks.js',
             '../js/**/*.js',
