@@ -592,6 +592,7 @@
     <Content Include="Tests\lib\angular\angular-mocks.js" />
     <Content Include="Tests\lib\angular\angular-scenario.js" />
     <Content Include="Tests\lib\angular\version.txt" />
+    <Content Include="Tests\lib\bootstrap.min.js" />
     <Content Include="Tests\lib\jquery.min.js" />
     <Content Include="Tests\lib\sinon-1.7.3.js" />
     <Content Include="Tests\lib\toastr.js" />

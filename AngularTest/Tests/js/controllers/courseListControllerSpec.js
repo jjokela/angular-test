@@ -1,23 +1,22 @@
 'use strict';
 
 describe('CourseListController', function() {
-    var scope, $controllerConstructor, mockCourseData, mockNotificationFactory, q;
+    var scope, controllerConstructor, mockCourseData, mockNotificationFactory, $q;
 
     beforeEach(module("angularTest"));
 
-    beforeEach(inject(function($controller, $rootScope, $q) {
+    beforeEach(inject(function($controller, $rootScope, _$q_) {
         scope = $rootScope.$new();
-        q = $q;
+        $q = _$q_;
         mockCourseData = sinon.stub({
             courses: function() {}
         });
         mockNotificationFactory = sinon.stub({error: function() {}});
-        $controllerConstructor = $controller;
+        controllerConstructor = $controller;
     }));
 
     it('should set the scope courses to the successful result of dataService.courses', function() {
-        var deferred = q.defer();
-        var promise = deferred.promise;
+        var deferred = $q.defer();
 
         // mock courses function call returns a promise
         mockCourseData.courses.returns(deferred.promise);
@@ -26,7 +25,7 @@ describe('CourseListController', function() {
         deferred.resolve({data: "name"});
 
         // initialize controller
-        var ctrl = $controllerConstructor("CourseListController",
+        var ctrl = controllerConstructor("CourseListController",
             {$scope: scope, $location: {}, dataService: mockCourseData, notificationFactory: mockNotificationFactory});
 
         // not needed, since GetCourses gets automatically called
@@ -40,8 +39,7 @@ describe('CourseListController', function() {
     });
 
     it('should call notificationFactory when failing getting courses', function() {
-        var deferred = q.defer();
-        var promise = deferred.promise;
+        var deferred = $q.defer();
 
         // mock courses function call returns a promise
         mockCourseData.courses.returns(deferred.promise);
@@ -50,7 +48,7 @@ describe('CourseListController', function() {
         deferred.reject(new Error('fail'));
 
         // initialize controller
-        var ctrl = $controllerConstructor("CourseListController",
+        var ctrl = controllerConstructor("CourseListController",
             {$scope: scope, $location: {}, dataService: mockCourseData, notificationFactory: mockNotificationFactory});
 
         // not needed, since GetCourses gets automatically called

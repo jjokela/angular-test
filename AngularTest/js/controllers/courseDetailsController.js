@@ -5,12 +5,15 @@ angularTest.controller('CourseDetailsController',
         $scope.course = "";
         $scope.loaded = false;
 
-        dataService.courseDetails($routeParams.courseId).then(function (data) {
-            $scope.course = data.data;
-            $scope.loaded = true;
-        }, function (xhr) {
-            console.log("Error: " + xhr);
-        });
+        $scope.getCourseDetails = function (promise) {
+            promise.then(function (data) {
+                $scope.course = data.data;
+                $scope.loaded = true;
+            }, function (xhr) {
+                console.log("Error: " + xhr);
+                notificationFactory.error('Failed to get course details.');
+            });
+        };
 
         $scope.back = function () {
             $location.url('/courses');
@@ -22,7 +25,7 @@ angularTest.controller('CourseDetailsController',
 
         $scope.delete = function (course) {
             dataService.deleteCourse($routeParams.courseId).then(function (data) {
-                console.log("Delete succesfull");
+                console.log("Delete successfull");
                 notificationFactory.success('Course deleted');
                 // wrap redirect inside scope.apply
                 $scope.dismiss().then(function () {
@@ -30,8 +33,12 @@ angularTest.controller('CourseDetailsController',
                 }); // myModal directive
             }, function (xhr) {
                 console.log("Error: " + xhr);
+                notificationFactory.error('Failed to delete course.');
             });
         };
+
+        // Get course details immediatelly
+        $scope.getCourseDetails(dataService.courseDetails($routeParams.courseId));
     }
 );
 

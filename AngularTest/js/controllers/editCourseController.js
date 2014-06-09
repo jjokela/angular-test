@@ -5,12 +5,15 @@ angularTest.controller('EditCourseController',
         $scope.course = "";
         $scope.loaded = false;
 
-        dataService.courseDetails($routeParams.courseId).then(function (data) {
-            $scope.course = data.data;
-            $scope.loaded = true;
-        }, function (xhr) {
-            console.log("Error: " + xhr);
-        });
+        $scope.getCourseDetails = function (promise) {
+            promise.then(function (data) {
+                $scope.course = data.data;
+                $scope.loaded = true;
+            }, function (xhr) {
+                console.log("Error: " + xhr);
+                notificationFactory.error('Failed to get course details.');
+            });
+        };
 
         $scope.cancel = function () {
             $location.url('/course/' + $routeParams.courseId);
@@ -19,13 +22,16 @@ angularTest.controller('EditCourseController',
         $scope.save = function (course, courseForm) {
             if (courseForm.$valid) {
                 dataService.editCourse($routeParams.courseId, course).then(function (data) {
-                    console.log('ny meni editti hyvin: ' + data);
                     notificationFactory.success('Changes saved succesfully!');
                     $location.url('/courses');
                 }, function (xhr) {
                     console.log('fail: ' + xhr.data.message);
+                    notificationFactory.error('Failed to save course.');
                 });
             }
         };
+
+        // Get course details immediatelly
+        $scope.getCourseDetails(dataService.courseDetails($routeParams.courseId));
     }
 );

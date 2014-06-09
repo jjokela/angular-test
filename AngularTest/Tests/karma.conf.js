@@ -1,7 +1,7 @@
 ﻿module.exports = function (config) {
     config.set({
 
-        basePath: '',
+        basePath: '../',
 
         frameworks: ['jasmine'],
 
@@ -13,24 +13,25 @@
         // list of files / patterns to load in the browser
         // ../ ==> folderi missä karma.conf sijaitsee
         files: [
-            '../Tests/lib/jquery.min.js', 
-            '../Scripts/angular.js',
-            '../Tests/lib/sinon-1.7.3.js',
-            '../Tests/lib/toastr.js',
-            '../Scripts/angular-*.js',
-            '../Tests/lib/angular/angular-mocks.js',
-            '../js/**/*.js',
-            '../Tests/unit/**/*.js',
-            '../Tests/js/controllers/**/*.js',
-            '../Tests/js/directives/**/*.js',
-            '../Tests/js/services/**/*.js'
-            //'partials/**/*.html'
+            'Tests/lib/jquery.min.js',
+            'Tests/lib/bootstrap.min.js',
+            'Scripts/angular.js',
+            'Tests/lib/sinon-1.7.3.js',
+            'Tests/lib/toastr.js',
+            'Scripts/angular-*.js',
+            'Tests/lib/angular/angular-mocks.js',
+            'js/**/*.js',
+            'Tests/unit/**/*.js',
+            'Tests/js/controllers/**/*.js',
+            'Tests/js/directives/**/*.js',
+            'Tests/js/services/**/*.js',
+            'templates/directives/**/*.html'
         ],
 
 
         // list of files to exclude
         exclude: [
-            '../Scripts/angular-scenario.js'
+            'Scripts/angular-scenario.js'
         ],
 
 
