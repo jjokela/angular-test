@@ -9,6 +9,9 @@
                 option(value="done") Done
                 option(value="in progress") In Progress
                 option(value="not started") Not Started
+        .form-group
+            label.control-label(for="courseName") Filter
+            input#courseName.form-control(type="text", ng-model="query.name", placeholder="Filter by Course Name")
     ul.thumbnails
         li(ng-repeat="course in filtered = (courses | filter: query) | orderBy: name").col-sm-6
             course-thumbnail(course="course")

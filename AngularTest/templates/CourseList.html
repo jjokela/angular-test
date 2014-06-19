@@ -12,6 +12,10 @@
         <option value="not started">Not Started</option>
       </select>
     </div>
+    <div class="form-group">
+      <label for="courseName" class="control-label">Filter</label>
+      <input id="courseName" type="text" ng-model="query.name" placeholder="Filter by Course Name" class="form-control"/>
+    </div>
   </form>
   <ul class="thumbnails">
     <li ng-repeat="course in filtered = (courses | filter: query) | orderBy: name" class="col-sm-6">

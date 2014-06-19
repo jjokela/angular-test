@@ -83,6 +83,7 @@ input.ng-invalid.ng-dirty {
 
 @media (max-width: 767px) {
   ul.thumbnails li {
-    padding-right: 0; } }
+    padding-right: 0;
+    padding-left: 0; } }
 
 /*# sourceMappingURL=app.css.map */
