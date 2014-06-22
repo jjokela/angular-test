@@ -16,7 +16,14 @@ namespace SpaTest.Controllers
 {
     public class CoursesController : ApiController
     {
-        private CoursesDb db = new CoursesDb();
+        private ICoursesDb db = new CoursesDb();
+
+        public CoursesController() {}
+
+        public CoursesController(ICoursesDb db)
+        {
+            this.db = db;
+        }
 
         // GET: api/Courses
         public IQueryable<Course> GetCourses()
@@ -51,7 +58,8 @@ namespace SpaTest.Controllers
                 return BadRequest();
             }
 
-            db.Entry(course).State = EntityState.Modified;
+            //db.Entry(course).State = EntityState.Modified;
+            db.MarkAsModified(course);
 
             try
             {

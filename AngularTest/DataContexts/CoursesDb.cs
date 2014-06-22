@@ -7,12 +7,19 @@ using SpaTest.Models;
 
 namespace SpaTest.DataContexts
 {
-    public class CoursesDb : DbContext
+    public class CoursesDb : DbContext, ICoursesDb
     {
         public CoursesDb(): base("name=CoursesContext")
         {
         }
 
         public DbSet<Course> Courses { get; set; }
+
+
+        public void MarkAsModified(Course course)
+        {
+            Entry(course).State = EntityState.Modified;
+        }
+
     }
 }
